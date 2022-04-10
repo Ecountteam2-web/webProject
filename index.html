@@ -5,17 +5,17 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/footerstyle.css"> 
         <!--footer css-->
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="script.js" defer></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script><!--footer 아이콘-->
         
         <script>
+            function videoUrl(hm) {
+                document.getElementById("slider").src = hm;
+            }
             $(document).ready(function(){
-                function videoUrl(hm) {
-                    document.getElementById("slider").src = hm;
-                }
                 $('#videosection .navigation img').hide();
                 $('#videosection .navigation').on('mouseover', ()=>{
                     $('#videosection .navigation img').show();
@@ -24,7 +24,6 @@
                     $('#videosection .navigation img').hide();
                 });
             });
-
         </script>
         <style>
             #videosection{
@@ -89,7 +88,7 @@
                     <source src="https://docs.google.com/uc?export=open&id=1LNvMafOyA_cgRKxQ_X26bfdy9dGTCCvN" type="video/mp4" />
         
                 </video>
-                <ul class="navigation">
+                <ul id="videonav" class="navigation">
                     <li onclick="videoUrl('https://docs.google.com/uc?export=open&id=1LNvMafOyA_cgRKxQ_X26bfdy9dGTCCvN')"><img src="img/Spider-Man(2).jpg" /></li>
                     <li onclick="videoUrl('https://drive.google.com/uc?export=view&id=1Q8eNzFS_AVQQjuC5bfnP8LfFMa47yCzx')"><img src="img/The King.jpg" /></li>
                     <li onclick="videoUrl('https://docs.google.com/uc?export=open&id=1khm59rNZn2eHi18wilXrypNxTDhv4wxR')"><img src="img/Shawshank.jpg" /></li>
@@ -146,7 +145,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <div class="wrapper" id="contactpage">
             <footer class="footer-07">
                 <div class="container">
@@ -159,13 +157,13 @@
                                 <a href="#musicpage">Audio</a>
                                 <br />
                                 <br />
-                                <p>Contact with us</p>
+                                <a>Contact with us</a>
                             </p>
                             <ul class="ftco-footer-social p-0">
-                <li class="ftco-animate"><a href="https://github.com/Ecountteam2-web/webProject" data-toggle="tooltip" data-placement="top" title="Github"><span><ion-icon name="logo-github"></ion-icon></span></a></li>
-                <li class="ftco-animate"><a href="https://www.notion.so/Ecount-Team-2-c9170958853347fe92de0100b14b762a" target="_blank" data-toggle="tooltip" data-placement="top" title="Notion"><span><ion-icon name="reader-outline"></ion-icon></span></a></li>
-                <li class="ftco-animate"><a href="https://cafe.naver.com/eount" data-toggle="tooltip" target="_blank" data-placement="top" title="Cafe"><span><ion-icon name="cafe"></ion-icon></span></a></li>
-                </ul>
+                                <li class="ftco-animate"><a href="https://github.com/Ecountteam2-web/webProject" data-toggle="tooltip" data-placement="top" title="Github"><span><ion-icon name="logo-github"></ion-icon></span></a></li>
+                                <li class="ftco-animate"><a href="https://www.notion.so/Ecount-Team-2-c9170958853347fe92de0100b14b762a" target="_blank" data-toggle="tooltip" data-placement="top" title="Notion"><span><ion-icon name="reader-outline"></ion-icon></span></a></li>
+                                <li class="ftco-animate"><a href="https://cafe.naver.com/eount" data-toggle="tooltip" target="_blank" data-placement="top" title="Cafe"><span><ion-icon name="cafe"></ion-icon></span></a></li>
+                            </ul>
                         </div>
                     </div>
                     
@@ -173,6 +171,5 @@
 		</footer>
 
         </div>
-        <script> </script>
     </body>
 </html>
