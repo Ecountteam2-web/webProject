@@ -1,9 +1,9 @@
 let colors = [
     '#111',
-    '#041C32',
-    '#04293A',
-    '#064663',
-    '#ECB365',
+    '#171010',
+    '#423F3E',
+    '#362222',
+    '#111'
 ]
 
 let container = document.getElementById('test');
@@ -15,7 +15,7 @@ let scrollValue = 0;
 let dateNow = Date.now();
 
 function changeBgColor(e) {
-    scrollValue += e.deltaY * 0.009;
+    scrollValue += e.deltaY * 0.01;
     console.log(Math.floor(scrollValue));
     timePassed = Date.now() - dateNow;
     if (scrollValue > 10 && timePassed > 500) {
