@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ecount Team2</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="footer_css/style.css"> <!--footer css-->
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="script.js" defer></script>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script><!--footer 아이콘-->
+        
+        <script>
+            let progilelist =[];
+            
+            $(document).ready(function(){
+                $('.profile profile_red').attr('href',"personalpage/kyutae/index_kt.html");
+                $('.profile profile_red').click(function(){
+                });
+            });
+
+        </script>
+        
+        
+        <style>
+            #videoplayer{
+                width: 80%;
+                padding: 200px;
+                margin: auto;
+            }
+            
+            .wrapper{
+                margin: 100 px;
+            }
+
+            #sidebar{
+                position: fixed;
+                top: 50%;
+            }
+
+        </style>    
+    </head>
+    <body id="test">
+    <div id="sidebar">
+        <div id="mySidenav" class="sidenav">
+            <a href="#teampage" id="team">Team</a>
+            <a href="#videopage" id="video">Video</a>
+            <a href="#musicpage" id="music">Music</a>
+            <a href="#contactpage" id="contact">Contact</a>
+        </div>
+    </div>
+        
+        <div class="wrapper" id="teampage">
+            <ul class="team">
+                <li class="team-item">
+                    <div class="profile profile_red" href="">
+                        <img src="images/1.jpg">
+                        <div class="profile-contents">
+                            <h2>Kyutae Park <span>TeamLeader</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="team-item">
+                    <div class="profile profile_beige">
+                        <img src="images/3.jpg">
+                        <div class="profile-contents">
+                            <h2>Chanwo Kim <span>Mood Maker</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="team-item">
+                    <div class="profile profile_green">
+                        <img src="images/4.jpg">
+                        <div class="profile-contents">
+                            <h2>Wonyoeng Yoo <span>Designer</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="team-item">
+                    <div class="profile profile_pink">
+                        <img src="images/2.jpg">
+                        <div class="profile-contents">
+                            <h2>Hyuckjun Choi <span>Front-end</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="wrapper" id="videopage">
+            
+        </div>
+        <div class="wrapper" id="musicpage">
+
+                <div class="wrapper" id="playmusic">
+                    <div class="details">
+                        <div class="now-playing">PLAYING x OF y</div>
+                        <div class="track-art"></div>
+                        <div class="track-name">Track Name</div>
+                        <div class="track-artist">Track Artist</div>
+                    </div>
+                    <div class="slider_container">
+                        <div class="current-time">00:00</div>
+                        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                        <div class="total-duration">00:00</div>
+                    </div>
+
+                    <div class="slider_container">
+                        <i class="fa fa-volume-down" onclick="mute_Volume()"></i>
+                        <input type="range" min="1" max="100" value="50" class="volume_slider" onchange="setVolume()">
+                        <i class="fa fa-volume-up" onclick="max_Volume()"></i>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="random-track" onclick="randomTrack()">
+                            <i class="fas fa-random fa-2x" title="random"></i>
+                        </div>
+                        <div class="prev-track" onclick="prevTrack()">
+                             <i class="fa fa-step-backward fa-2x"></i>
+                         </div>
+                         <div class="playpause-track" onclick="playpauseTrack()">
+                             <i class="fa fa-play-circle fa-5x"></i>
+                         </div>
+                         <div class="next-track" onclick="nextTrack()">
+                             <i class="fa fa-step-forward fa-2x"></i>
+                         </div>
+                         <div class="repeat-track" onclick="repeatTrack()">
+                             <i class="fa fa-repeat fa-2x" title="repeat"></i>
+                         </div>
+                    </div>
+
+                    <div id="wave">
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper" id="contactpage">
+            <footer class="footer-07">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 text-center">
+                            <h2 class="footer-heading"><a href="#" class="logo">Ecount Team2</a></h2>
+                            <p class="menu">
+                                <a href="#">Home</a>
+                                <a href="#">Audio</a>
+                                <a href="#">Video</a>
+                                <br />
+                                <br />
+                                <a href="#">Contact with us</a>
+                            </p>
+                            <ul class="ftco-footer-social p-0">
+                <li class="ftco-animate"><a href="https://github.com/Ecountteam2-web/webProject" data-toggle="tooltip" data-placement="top" title="Github"><span><ion-icon name="logo-github"></ion-icon></span></a></li>
+                <li class="ftco-animate"><a href="https://www.notion.so/Ecount-Team-2-c9170958853347fe92de0100b14b762a" target="_blank" data-toggle="tooltip" data-placement="top" title="Notion"><span><ion-icon name="reader-outline"></ion-icon></span></a></li>
+                <li class="ftco-animate"><a href="https://cafe.naver.com/eount" data-toggle="tooltip" target="_blank" data-placement="top" title="Cafe"><span><ion-icon name="cafe"></ion-icon></span></a></li>
+                </ul>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-12 text-center">
+                            <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                    </div>
+                </div>
+		</footer>
+
+        </div>
+        <script> </script>
+    </body>
+</html>
