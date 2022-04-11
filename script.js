@@ -15,7 +15,7 @@ let scrollValue = 0;
 let dateNow = Date.now();
 
 function changeBgColor(e) {
-    scrollValue += e.deltaY * 0.03; //스크롤 value에 대한 조절 가능한
+    scrollValue += e.deltaY * 0.3; //스크롤 value에 대한 조절 가능한
     console.log(Math.floor(scrollValue));
     timePassed = Date.now() - dateNow;
     if (scrollValue > 10 && timePassed > 500) {
