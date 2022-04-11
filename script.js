@@ -107,7 +107,7 @@ function loadTrack(track_index){//처음 load되는 함수
     random_bg_color(); // 색 변경
 }
 
-function random_bg_color(){// ���� �������� �����ϴ� �Լ� don't need function
+function random_bg_color(){// don't need function
     let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
     let a;
 
@@ -127,57 +127,57 @@ function random_bg_color(){// ���� �������� ����
     //document.body.style.background = gradient; //���� ���� �����ϴ°� �׶��̼�����
     document.body.style.backgroundColor = "#111111"; //���� ���� �����ϴ°�
 }
-function mute_Volume() {
+function mute_Volume() { // 음소거 버튼 누르면 실행
     curr_track.volume = 0;
     volume_slider.value = 0;
 }
-function max_Volume() {    
+function max_Volume() {    //max 버튼 누르면 소리 max 설정
     curr_track.volume = 1;
     volume_slider.value = 100;
 }
 
-function reset(){
+function reset(){ // text들 수정
     curr_time.textContent = "00:00";
     total_duration.textContent = "00:00";
     seek_slider.value = 0;
 }
-function randomTrack(){
+function randomTrack(){ // is random에 대한 판단
     isRandom ? pauseRandom() : playRandom();
 }
-function playRandom(){
+function playRandom(){ //랜덤플레이 실행
     isRandom = true;
-    randomIcon.classList.add('randomActive');
+    randomIcon.classList.add('randomActive'); //아이콘 바꾸기
 }
-function pauseRandom(){
+function pauseRandom(){ //랜덤 플레이 stop
     isRandom = false;
     randomIcon.classList.remove('randomActive');
 }
-function repeatTrack(){
+function repeatTrack(){ //음악 다시 재생 트렉 넘버를 다시 넘김 그리고 실행
     let current_index = track_index;
     loadTrack(current_index);
     playTrack();
 }
-function playpauseTrack(){
+function playpauseTrack(){ //플레이가 진행중이라면 멈추고 아니라면 실행
     isPlaying ? pauseTrack() : playTrack();
 }
-function playTrack(){
+function playTrack(){// 음악 재생 구간
     curr_track.play();
     isPlaying = true;
-    track_art.classList.add('rotate');
-    wave.classList.add('loader');
-    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+    track_art.classList.add('rotate'); //cd 도는거 효과 추가
+    wave.classList.add('loader'); // 밑에 도미노 효과 추가
+    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>'; // 버튼 변화
 }
-function pauseTrack(){
+function pauseTrack(){ //음악 멈춤 재생과 비슷함
     curr_track.pause();
     isPlaying = false;
     track_art.classList.remove('rotate');
     wave.classList.remove('loader');
     playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
 }
-function nextTrack(){
+function nextTrack(){ // next 버튼 누를경우 lenght를 통해 max값 조절
     if(track_index < music_list.length - 1 && isRandom === false){
         track_index += 1;
-    }else if(track_index < music_list.length - 1 && isRandom === true){
+    }else if(track_index < music_list.length - 1 && isRandom === true){ // 랜덤이 true라면 그냥 랜덤값 받아서 그 수에 따라 실행
         let random_index = Number.parseInt(Math.random() * music_list.length);
         track_index = random_index;
     }else{
@@ -195,14 +195,14 @@ function prevTrack(){
     loadTrack(track_index);
     playTrack();
 }
-function seekTo(){
+function seekTo(){ //음악 재생 위치 조절 슬라이더 값에 따라
     let seekto = curr_track.duration * (seek_slider.value / 100);
     curr_track.currentTime = seekto;
 }
-function setVolume(){
+function setVolume(){ //소리 설정 
     curr_track.volume = volume_slider.value / 100;
 }
-function setUpdate(){
+function setUpdate(){ //load에서 실행 그러니까 음악에 대한 정보를 추가하는거임 ex) 음악에 대한 길이라던지 그런거 셋팅
     let seekPosition = 0;
     if(!isNaN(curr_track.duration)){
         seekPosition = curr_track.currentTime * (100 / curr_track.duration);
