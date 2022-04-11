@@ -1,4 +1,4 @@
-let colors = [
+let colors = [ // 스크롤링에 따른 색 변화 리스트
     '#111',
     '#171010',
     '#423F3E',
@@ -6,7 +6,7 @@ let colors = [
     '#111'
 ]
 
-let container = document.getElementById('test');
+let container = document.getElementById('test'); //body id
 
 container.onwheel = changeBgColor;
 
@@ -15,7 +15,7 @@ let scrollValue = 0;
 let dateNow = Date.now();
 
 function changeBgColor(e) {
-    scrollValue += e.deltaY * 0.01;
+    scrollValue += e.deltaY * 0.01; //스크롤 value에 대한 조절 가능한
     console.log(Math.floor(scrollValue));
     timePassed = Date.now() - dateNow;
     if (scrollValue > 10 && timePassed > 500) {
@@ -60,7 +60,7 @@ let isPlaying = false;
 let isRandom = false;
 let updateTimer;
 
-const music_list = [
+const music_list = [ //음악 리스트
     {
         img: 'https://docs.google.com/uc?export=open&id=1uYqmA_NC6ccIk-tN4KR4PeHPCS3Nsi3r',
         name: 'Youngblood',
@@ -89,25 +89,25 @@ const music_list = [
 
 loadTrack(track_index);
 
-function loadTrack(track_index){
+function loadTrack(track_index){//처음 load되는 함수
     clearInterval(updateTimer);
     reset();
 
     curr_track.src = music_list[track_index].music;
     curr_track.load();
 
-    track_art.style.backgroundImage = "url(" + music_list[track_index].img + ")";
-    track_name.textContent = music_list[track_index].name;
-    track_artist.textContent = music_list[track_index].artist;
-    now_playing.textContent = "Playing music " + (track_index + 1) + " of " + music_list.length;
+    track_art.style.backgroundImage = "url(" + music_list[track_index].img + ")"; // art 이미지 변경
+    track_name.textContent = music_list[track_index].name; // 음악이름 변경 배열에서 받아와서
+    track_artist.textContent = music_list[track_index].artist; // 아티스트 이름 변경
+    now_playing.textContent = "Playing music " + (track_index + 1) + " of " + music_list.length; // 음악 로케이션 표시
 
-    updateTimer = setInterval(setUpdate, 1000);
+    updateTimer = setInterval(setUpdate, 1000); // 주기적인 실행 1초 setUpdate 1초마다 실행
 
-    curr_track.addEventListener('ended', nextTrack);
-    random_bg_color();
+    curr_track.addEventListener('ended', nextTrack); // audio 엘리먼트에 대해 종료 이벤트 추가
+    random_bg_color(); // 색 변경
 }
 
-function random_bg_color(){// ���� �������� �����ϴ� �Լ�
+function random_bg_color(){// ���� �������� �����ϴ� �Լ� don't need function
     let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
     let a;
 
